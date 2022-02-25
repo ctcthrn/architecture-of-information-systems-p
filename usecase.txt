@@ -1,0 +1,13 @@
+@startuml
+:Robot: --> (turning on the robot)
+:Robot: --> (turn left)
+:Robot: --> (turn right)
+:Robot: --> (move straight)
+:Robot: --> (start painting)
+:Robot: --> (stop painting)
+:Robot: --> (stop moving)
+:Robot: --> (discover the inscription)
+:Robot: --> (take the virtical position of the spray gun)
+:Robot: --> (take the horizontal position of the spray gun)
+:Robot: --> (turning off the robot)
+@enduml
