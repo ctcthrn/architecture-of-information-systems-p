@@ -1,0 +1,12 @@
+@startuml
+actor Robot #red
+' The only difference between actor
+'and participant is the drawing 
+participant System 
+
+Robot ->System: move straight
+Robot ->System: start painting
+Robot ->System: discover the inscription
+Robot ->System: turn left
+Robot ->System: take the horizontal position of the spray gun
+@enduml
