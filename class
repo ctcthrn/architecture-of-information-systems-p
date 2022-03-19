@@ -1,0 +1,15 @@
+@startuml
+class CameraSystem{
+GraffitiDetect()
+CallUser()
+CallRobotCoordinates()
+}
+class Robot{
+MoveStraight()
+Turn30()
+SprayGunWall()
+SprayGunFloor()
+StartPainting()
+StopPainting()
+}
+CameraSystem o- Robot :has
