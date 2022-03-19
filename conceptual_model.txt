@@ -1,17 +1,20 @@
 @startuml
+class camerasystem
+class graffiti
+class robot
+class spraygun
+class wall
+class floor
+class graffiti
+class user
 
-class Robot{
-move_straight()
-turn_left()
-}
-
-class Spray_gun{
-start_painting()
-take_the_horizontal_position()
-}
-
-Robot - Graffiti: detected >
-Robot *- Spray_gun: have
-Spray_gun - Graffiti: painting >
-
+camerasystem -right-> graffiti: detected
+camerasystem -right- robot : cordinates
+robot -- spraygun : turn
+spraygun -- wall: paint
+spraygun -- floor: paint
+wall -- graffiti : have >
+floor -- graffiti : have >
+camerasystem -up-> user: call
+user --> camerasystem: answer
 @enduml
