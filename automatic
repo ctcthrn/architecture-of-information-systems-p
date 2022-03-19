@@ -1,0 +1,16 @@
+@startuml
+[*] --> off
+off --> on : user press on
+on --> off : user press off
+on --> getting_coordinates : detected_graffiti()
+getting_coordinates --> moving_straight : move()
+getting_coordinates --> turn : turn30()
+turn --> moving_straight : move()
+moving_straight --> turn : turn30()
+moving_straight --> turn_spray_gun : turn_spray_gun()
+turn --> turn_spray_gun : turn_spray_gun()
+turn_spray_gun --> painting : start_painting()
+turn --> painting : start_painting()
+moving_straight --> painting : start_painting()
+painting --> off : stop_painting()
+@enduml
