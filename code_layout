@@ -1,8 +1,16 @@
 #include <iostream>
 using name spase std;
 
-class CameraSystem{
-}
-
 class Robot{
-}
+  int angle, lenght;
+  void on(){
+  }
+  void start_painting(){
+  }
+  void move{
+  }
+  turn30(){
+  }
+  
+
+  }
