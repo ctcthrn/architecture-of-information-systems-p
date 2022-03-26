@@ -23,3 +23,16 @@ class Robot{
   void start_painting(){
   }
 }
+
+class CameraSystem{
+  
+  void detected_graffiti(){
+  }
+  
+  void call_user(){
+  }
+  
+  void call_robot_coordinates(){
+  }
+}  
+}
