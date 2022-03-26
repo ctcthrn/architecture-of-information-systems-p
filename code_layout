@@ -33,6 +33,9 @@ class CameraSystem{
   }
   
   void call_robot_coordinates(){
-  }
-}  
+  } 
+}
+
+int main(){
+  
 }
