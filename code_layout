@@ -2,17 +2,24 @@
 using name spase std;
 
 class Robot{
-  int angle, lenght;
+ 
   void on(){
   }
+  
   void getting_coordinated(){
+    int x, y;
   }
+  
   void move{
   }
+  
   void turn30(){
+    int angle;
   }
+  
   void turn_sptay_gun{
   }
+  
   void start_painting(){
   }
 }
