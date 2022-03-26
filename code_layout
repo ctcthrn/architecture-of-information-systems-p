@@ -1,23 +1,30 @@
 #include <iostream>
-using name spase std;
+using namespase std;
+
+enum States
+{
+	ON,
+	OFF,
+	MOVE
+}
 
 class Robot{
+ 	States state;
  
   void on(){
+  	state = States::ON;
   }
   
   void getting_coordinated(){
-    int x, y;
   }
   
-  void move{
+  void move(){
   }
   
   void turn30(){
-    int angle;
   }
   
-  void turn_sptay_gun{
+  void turn_spray_gun(){
   }
   
   void start_painting(){
