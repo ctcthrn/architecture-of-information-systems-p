@@ -5,12 +5,14 @@ class Robot{
   int angle, lenght;
   void on(){
   }
-  void start_painting(){
+  void getting_coordinated(){
   }
   void move{
   }
-  turn30(){
+  void turn30(){
   }
-  
-
+  void turn_sptay_gun{
   }
+  void start_painting(){
+  }
+}
