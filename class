@@ -13,3 +13,4 @@ StartPainting()
 StopPainting()
 }
 CameraSystem o- Robot :has
+ 
