@@ -15,7 +15,7 @@ enum States
 
 class Robot{
  	States state;
- 
+public: 
   void on(){
   	state = States::ON;
   }
@@ -57,7 +57,7 @@ class Robot{
 
 class CameraSystem{
   States state;
-  
+public:
   void detected_graffiti(){
   	state = States::GETTINGCOORDINATES;
   } 
@@ -72,4 +72,29 @@ class CameraSystem{
 }
 
 int main(){
+	Robot r;
+	while (true)
+	{
+		char c;
+		cin >> c;
+		switch(c)
+		{
+			case 'm':
+				r.move();
+				break;
+				
+			case 't':
+				r.turn30();
+				break;
+			
+			case 'f':
+				r.spray_gun_floor();
+				break;
+			
+			case 'w':
+				r.spray_gun_wall();
+				break;
+		}
+	
+	}
 }
