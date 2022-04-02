@@ -94,6 +94,26 @@ int main(){
 			case 'w':
 				r.spray_gun_wall();
 				break;
+			
+			case 'g':
+				r.getting_coordinated();
+				break;
+				
+			case '0':
+				r.off();
+				break;
+				
+			case '1':
+				r.on();
+				break;
+				
+			case '1p':
+				r.start_painting();
+				break;
+				
+			case '0p':
+				r.stop_painting();
+				break;
 		}
 	
 	}
