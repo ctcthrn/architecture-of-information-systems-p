@@ -5,7 +5,7 @@ enum Event
 {
 	PRESS_ON,
 	PRESS_OFF
-}
+};
 
 enum States
 {
@@ -17,7 +17,7 @@ enum States
 	TURNSPRAYGUN,
 	PAINTING
 	
-}
+};
 
 class Robot{
  	States state;
