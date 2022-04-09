@@ -1,6 +1,12 @@
 #include <iostream>
 using namespase std;
 
+enum Event
+{
+	PRESS_ON,
+	PRESS_OFF
+}
+
 enum States
 {
 	ON,
@@ -16,12 +22,27 @@ enum States
 class Robot{
  	States state;
 public: 
-  void on(){
-  	state = States::ON;
+  
+  void pevent(const Event& e)
+  {
+   	switch(e)
+	{
+		case Event::PRESS_ON:
+			on();
+			state = States::ON;
+			break;
+			
+		case Event::PRESS_OFF:
+			off();
+			state = States::OFF;
+			break;
+	}
   }
   
+  void on(){
+  }
+
   void off(){
-  	state = States::OFF;
   }
   
   void getting_coordinated(){
@@ -71,50 +92,32 @@ public:
   } 
 }
 
-int main(){
-	Robot r;
-	while (true)
+class ConsoleCommand()
+{
+public:
+	Event getCommand()
 	{
 		char c;
 		cin >> c;
-		switch(c)
+		
+		switch(c):
 		{
-			case 'm':
-				r.move();
-				break;
-				
-			case 't':
-				r.turn30();
-				break;
-			
-			case 'f':
-				r.spray_gun_floor();
-				break;
-			
-			case 'w':
-				r.spray_gun_wall();
-				break;
-			
-			case 'g':
-				r.getting_coordinated();
-				break;
-				
 			case '0':
-				r.off();
-				break;
+				return Event::PRESS_OFF;
 				
 			case '1':
-				r.on();
-				break;
-				
-			case '1p':
-				r.start_painting();
-				break;
-				
-			case '0p':
-				r.stop_painting();
-				break;
+				return Event::PRESS_ON;
 		}
+	}
+}
+
+int main(){
+	Robot r;
+	ConsoleCommand cmd;
 	
+	while (true)
+	{
+		Event e = cmd.getEvent();
+		r.pevent(e);
 	}
 }
