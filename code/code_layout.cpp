@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-enum Event
+enum class Event
 {
 	PRESS_ON,
 	PRESS_OFF,
@@ -13,7 +13,7 @@ enum Event
 	STOP_PAINTING
 };
 
-enum States
+enum class States
 {
 	ON,
 	OFF,
@@ -105,6 +105,10 @@ public:
   void stop_painting(){
   	state = States::OFF;
   }
+  
+  void detected_graffiti(){
+  	state = States::GETTINGCOORDINATES;
+  }
 };
 
 class CameraSystem{
@@ -121,9 +125,9 @@ public:
   void call_robot_coordinates(){
   	state = States::GETTINGCOORDINATES;
   } 
-}
+};
 
-class ConsoleCommand()
+class ConsoleCommand
 {
 public:
 	Event getCommand()
@@ -131,7 +135,7 @@ public:
 		char c;
 		cin >> c;
 		
-		while (c != '0' || c != '1' || c != 'm' || c != 't' || c != 'ts' || c != 'd' || c != '1p' || c != '0p')
+		while (c != '0' && c != '1' && c != 'm' && c != 't' && c != 's' && c != 'd' && c != 'p' && c != 'e')
 		{
 			cout << "ERROR. INVAILD VALUE";
 			cin >> c;
@@ -151,21 +155,21 @@ public:
 			case 't':
 				return Event::TURN30;
 				
-			case 'ts':
+			case 's':
 				return Event::TURN_SPRAY_GUN;
 			
 			case 'd':
 				return Event::DETECTED_GRAFFITI;
 			
-			case '1p':
+			case 'p':
 				return Event::START_PAINTING;
 				
-			case '0p':
+			case 'e':
 				return Event::STOP_PAINTING;
 				
 		}
 	}
-}
+};
 
 int main(){
 	Robot r;
@@ -177,3 +181,4 @@ int main(){
 		r.pevent(e);
 	}
 }
+
