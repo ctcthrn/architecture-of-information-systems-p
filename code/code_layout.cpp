@@ -131,13 +131,14 @@ public:
 		char c;
 		cin >> c;
 		
+		while (c != '0' || c != '1' || c != 'm' || c != 't' || c != 'ts' || c != 'd' || c != '1p' || c != '0p')
+		{
+			cout << "ERROR. INVAILD VALUE";
+			cin >> c;
+		}
+		
 		switch(c):
 		{
-			while (c != '0' || c != '1' || c != 'm' || c != 't' || c != 'ts' || c != 'd' || c != '1p' || c != '0p')
-{
-cout << "ERROR. INVAILD VALUE";
-cin >> c;
-} 
 			case '0':
 				return Event::PRESS_OFF;
 				
