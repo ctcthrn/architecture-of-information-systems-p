@@ -141,7 +141,7 @@ public:
 			cin >> c;
 		}
 		
-		switch(c):
+		switch(c)
 		{
 			case '0':
 				return Event::PRESS_OFF;
