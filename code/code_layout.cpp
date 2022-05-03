@@ -130,7 +130,7 @@ public:
 class ConsoleCommand
 {
 public:
-	Event getCommand()
+	Event getEvent()
 	{
 		char c;
 		cin >> c;
