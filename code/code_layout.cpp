@@ -1,5 +1,5 @@
 #include <iostream>
-using namespase std;
+using namespace std;
 
 enum Event
 {
@@ -17,7 +17,7 @@ enum States
 {
 	ON,
 	OFF,
-	GETTINGCOORDINATES
+	GETTINGCOORDINATES,
 	MOVESTRAIGHT,
 	TURN,
 	TURNSPRAYGUN,
@@ -105,7 +105,7 @@ public:
   void stop_painting(){
   	state = States::OFF;
   }
-}
+};
 
 class CameraSystem{
   States state;
