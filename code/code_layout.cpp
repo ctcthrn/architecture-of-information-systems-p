@@ -4,7 +4,13 @@ using namespase std;
 enum Event
 {
 	PRESS_ON,
-	PRESS_OFF
+	PRESS_OFF,
+	DETECTED_GRAFFITI,
+	MOVE,
+	TURN30,
+	TURN_SPRAY_GUN,
+	START_PAINTING,
+	STOP_PAINTING
 };
 
 enum States
@@ -15,8 +21,7 @@ enum States
 	MOVESTRAIGHT,
 	TURN,
 	TURNSPRAYGUN,
-	PAINTING
-	
+	PAINTING	
 };
 
 class Robot{
@@ -36,13 +41,45 @@ public:
 			off();
 			state = States::OFF;
 			break;
+			
+		case Event::MOVE:
+			move();
+			state = States::MOVESTRAIGHT;
+			break;
+			
+		case Event::TURN30:
+			turn30();
+			state = States::TURN;
+			break;
+			
+		case Event::TURN_SPRAY_GUN:
+			turn_spray_gun();
+			state = States::TURNSPRAYGUN;
+			break;
+				
+		case Event::DETECTED_GRAFFITI:
+			detected_graffiti();
+			state = States::GETTINGCOORDINATES;
+			break;
+			
+		case Event::START_PAINTING:
+			start_painting();
+			state = States::PAINTING;
+			break;
+			
+		case Event::STOP_PAINTING:
+			stop_painting();
+			state = States::OFF;
+			break;
 	}
   }
   
   void on(){
+  	state = States::ON;
   }
 
   void off(){
+  	state = States::OFF;
   }
   
   void getting_coordinated(){
@@ -57,14 +94,8 @@ public:
   	state = States::TURN;
   }
   
-  void spray_gun_wall(){
+  void turn_spray_gun(){
   	state = States::TURNSPRAYGUN;
-  	
-  }
-  
-   void spray_gun_floor(){
-  	state = States::TURNSPRAYGUN;
-  	
   }
   
   void start_painting(){
@@ -107,6 +138,25 @@ public:
 				
 			case '1':
 				return Event::PRESS_ON;
+		
+			case 'm':
+				return Event::MOVE;
+				
+			case 't':
+				return Event::TURN30;
+				
+			case 'ts':
+				return Event::TURN_SPRAY_GUN;
+			
+			case 'd':
+				return Event::DETECTED_GRAFFITI;
+			
+			case '1p':
+				return Event::START_PAINTING;
+				
+			case '0p':
+				return Event::STOP_PAINTING;
+				
 		}
 	}
 }
