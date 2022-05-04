@@ -135,7 +135,7 @@ public:
 	virtual Event getEvent() = 0;
 };
 
-class InternetCommand : public StartegyCommand
+class InternetCommand : public StrategyCommand
 {
 public:
 	Event getEvent()
