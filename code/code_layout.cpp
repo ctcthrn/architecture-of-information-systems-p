@@ -127,7 +127,25 @@ public:
 	}
 };
 
-class ConsoleCommand {
+//СТРАТЕГИЯ
+
+class StrategyCommand
+{
+public:
+	virtual Event getEvent() = 0;
+};
+
+class InternetCommand : public StartegyCommand
+{
+public:
+	Event getEvent()
+	{
+		return Event::PRESS_OFF;
+	}
+};
+
+class ConsoleCommand : public StrategyCommand
+{
 public:
 	Event getEvent()
 	{
@@ -171,11 +189,12 @@ public:
 
 int main() {
 	Robot r;
-	ConsoleCommand cmd;
+	StrategyCommand* cmd;
+	cmd = new ConsoleCommand();
 
 	while (true)
 	{
-		Event e = cmd.getEvent();
+		Event e = cmd->getEvent();
 		r.pevent(e);
 	}
 }
