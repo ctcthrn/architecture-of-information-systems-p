@@ -21,7 +21,7 @@ enum class Event
 enum class States
 {
 	OFF,
-    AWAITING,
+    	AWAITING,
 	GETTING_COORDINATES,
 	MOVING_STRAIGHT,
 	TURNING,
