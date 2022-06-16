@@ -130,7 +130,7 @@ public:
 	}
 };
 
-//СТРАТЕГИЯ
+//Ð¡Ð¢Ð ÐÐ¢Ð•Ð“Ð˜Ð¯
 class StrategyCommand
 {
 public:
@@ -243,8 +243,10 @@ public:
 
 int main()
 {
-	Robot r;
 	StrategyCommand* cmd = new ConsoleCommand();
+	Engine engines[2];
+	SprayGun spg;
+	Robot r(cmd, engines, spg);
 
-    r.run(cmd);
+    r.run();
 }
